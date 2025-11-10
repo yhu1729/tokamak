@@ -2,5 +2,9 @@
 name = "tokamak"
 version = "0.1.0"
 edition = "2024"
+license-file = "LICENSE"
+description = "Numerical simulation for tokamak devices"
+repository = "https://github.com/yhu1729/tokamak"
+readme = "README.txt"
 
 [dependencies]
