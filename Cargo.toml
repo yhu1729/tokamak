@@ -11,3 +11,4 @@ readme = "README.txt"
 
 [build-dependencies]
 cc = "1.0"
+bindgen = "0.72.1"
