@@ -8,3 +8,6 @@ repository = "https://github.com/yhu1729/tokamak"
 readme = "README.txt"
 
 [dependencies]
+
+[build-dependencies]
+cc = "1.0"
