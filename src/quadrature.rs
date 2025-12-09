@@ -1,4 +1,4 @@
-use tokamak::lib_c;
+use tokamak::lib;
 
 pub enum QuadratureType {
     GaussLegendre,
@@ -7,18 +7,17 @@ pub enum QuadratureType {
 pub fn integrate(
     quadrature_type: QuadratureType,
     order: i32,
-    f: lib_c::tkmk_IntegrateF,
+    f: lib::tkmk_IntegrateF,
     x_min: f64,
     x_max: f64,
 ) -> Result<f64, String> {
     let mut output: f64 = 0.0;
     let tkmk_quadrature_type = match quadrature_type {
-        QuadratureType::GaussLegendre => lib_c::tkmk_QuadratureType_GAUSS_LEGENDRE,
+        QuadratureType::GaussLegendre => lib::tkmk_QuadratureType_GAUSS_LEGENDRE,
     };
 
     unsafe {
-        let error =
-            lib_c::tkmk_integrate(&mut output, tkmk_quadrature_type, order, f, x_min, x_max);
+        let error = lib::tkmk_integrate(&mut output, tkmk_quadrature_type, order, f, x_min, x_max);
         if error != 0 {
             return Err("tkmk_integrate".to_string());
         }
