@@ -1,3 +1,4 @@
+mod lib;
 mod quadrature;
 
 fn main() {
